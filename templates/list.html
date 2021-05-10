@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kickass app</title>
+</head>
+<body>
+    <div class="eyecatcher">
+        <h1>eerste</h1>
+        <h2>tweede</h2>
+        <p>
+            de rest
+        </p>
+    </div>
+      <table>
+         <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>city</th>
+                <th>zip</th>
+                <th></th>
+            </tr>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["nm"]}}</td>
+               <td>{{row["addr"]}}</td>
+               <td> {{ row["city"]}}</td>
+               <td>{{row['zip']}}</td>
+                <td><a href="{{ url_for( 'delete',entry = row["nm"]) }}">delete</a> </td>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
